@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Social Links */}
         <div className="flex items-center gap-6 order-1 md:order-2">
           <a
-            href="https://github.com/mausam"
+            href="https://github.com/ThapaMausam"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-white transition-colors"
@@ -43,7 +43,7 @@ const Footer = () => {
             <GithubIcon className="w-5 h-5" />
           </a>
           <a
-            href="https://linkedin.com/in/mausam"
+            href="https://www.linkedin.com/in/mausamtmagar/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-slate-500 hover:text-white transition-colors"
