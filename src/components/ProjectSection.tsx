@@ -1,4 +1,5 @@
 import { ExternalLink, Code } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const ProjectSection = () => {
   const projects = [
@@ -31,81 +32,96 @@ const ProjectSection = () => {
     },
   ];
 
-return (
-    <section className="bg-white py-16 px-4 font-sans antialiased text-[#3c4043]">
-      <div className="max-w-6xl mx-auto">
+  return (
+    <section className="bg-slate-50 py-20 px-4 md:px-6 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Refined Minimalist Header Section */}
-        <div className="mb-12 md:mb-16 text-center">
-          <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-[#202124] mb-4">
-          Projects
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 mb-6">
+            Featured Projects
           </h2>
-          <p className="max-w-2xl text-[#5f6368] text-base leading-relaxed mx-auto">
-          A selection of projects I've built, showcasing my skills in full-stack development.
+          <p className="max-w-2xl text-slate-600 text-lg leading-relaxed mx-auto">
+            A selection of projects I've built, showcasing my skills in full-stack development.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project) => (
-            <div 
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
               key={project.id}
-              className="group bg-white rounded-2xl border border-[#dadce0] overflow-hidden hover:shadow-md transition-all duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
             >
               {/* Image Section */}
-              <div className="h-44 overflow-hidden bg-[#f8f9fa] flex items-center justify-center border-b border-[#dadce0]">
+              <div className="h-52 overflow-hidden bg-slate-100 relative">
                 {project.image ? (
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                  <>
+                    <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10" />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  </>
                 ) : (
-                  <div className="px-6 text-center">
-                    <span className="text-xl md:text-2xl font-bold text-[#1d1d1f] leading-tight block">
-                      In Progress
-                    </span>
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                    <div className="px-6 text-center">
+                      <span className="text-xl font-bold text-slate-300 uppercase tracking-widest">
+                        In Progress
+                      </span>
+                    </div>
                   </div>
                 )}
               </div>
 
               {/* Content Section */}
-              <div className="p-4 flex flex-col grow">
-                <h3 className="text-base font-medium text-[#202124] mb-1">
+              <div className="p-6 flex flex-col grow">
+                <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
                   {project.title}
                 </h3>
-                
-                <p className="text-[#5f6368] text-xs leading-relaxed mb-3 line-clamp-2">
+
+                <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">
                   {project.description}
                 </p>
-                
+
                 {/* Tech Tags */}
-                <div className="flex flex-wrap gap-1.5 mb-4">
+                <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[10px] px-2 py-0.5 bg-[#f1f3f4] text-[#5f6368] rounded-full">
+                    <span key={tag} className="text-[11px] px-2.5 py-1 bg-slate-50 text-slate-600 border border-slate-200 rounded-md font-medium">
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                {/* Actions - Scaled down to match image */}
-                <div className="flex items-center gap-2 mt-auto">
+                {/* Actions */}
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
                   <a target='_blank'
                     href={project.github}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#e8eaed] text-[#202124] text-[13px] font-medium hover:bg-[#dadce0] transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm font-medium hover:bg-slate-100 transition-all flex-1 justify-center"
                   >
-                    <Code size={14} />
+                    <Code size={16} />
                     <span>GitHub</span>
                   </a>
                   <a target='_blank'
                     href={project.link}
-                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-[#9ca3af] text-[#c92a62] text-[13px] font-medium hover:bg-gray-50 transition-colors"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 shadow-lg shadow-blue-500/20 transition-all flex-1 justify-center"
                   >
-                    <ExternalLink size={14} />
+                    <ExternalLink size={16} />
                     <span>Live Demo</span>
                   </a>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

@@ -1,9 +1,10 @@
 import { Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 // Custom SVG components to replace the deprecated Lucide brand icons
 const GithubIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" 
+  <svg
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" className={className}
   >
     <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.28 1.15-.28 2.35 0 3.5-.73 1.02-1.08 2.25-1 3.5 0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
@@ -12,8 +13,8 @@ const GithubIcon = ({ className }: { className?: string }) => (
 );
 
 const LinkedinIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" 
+  <svg
+    viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
     strokeLinecap="round" strokeLinejoin="round" className={className}
   >
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
@@ -31,61 +32,93 @@ const ContactSection = () => {
     <section className="bg-slate-50 py-20 px-6 font-sans">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-semibold text-slate-900 mb-4">Get In Touch</h2>
-          <p className="text-slate-600 text-lg">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+            Get In <span className="text-blue-600">Touch</span>
+          </h2>
+          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
             Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
-        </div>
+        </motion.div>
 
         {/* Contact Card */}
-        <div className="bg-white border border-slate-200 rounded-[40px] p-10 md:p-16 shadow-sm max-w-2xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="bg-white border border-slate-100 rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-slate-200/50 max-w-3xl mx-auto"
+        >
           <div className="flex flex-col gap-10">
             {/* Email */}
-            <a href="mailto:mausamwork@gmail.com" className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <Mail className="w-5 h-5 text-blue-700" />
+            <motion.a
+              whileHover={{ x: 10 }}
+              href="mailto:mausamwork@gmail.com"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
+                <Mail className="w-6 h-6 text-blue-600" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-500 text-sm font-medium">Email</span>
-                <span className="text-slate-900 text-lg font-semibold">mausamwork@gmail.com</span>
+                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Email</span>
+                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">mausamwork@gmail.com</span>
               </div>
-            </a>
+            </motion.a>
 
-            {/* GitHub - Using Custom SVG */}
-            <a href="https://github.com/ThapaMausam" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <GithubIcon className="w-5 h-5 text-blue-700" />
+            {/* GitHub */}
+            <motion.a
+              whileHover={{ x: 10 }}
+              href="https://github.com/ThapaMausam"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 group-hover:scale-110 transition-all duration-300">
+                <GithubIcon className="w-6 h-6 text-slate-700" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-500 text-sm font-medium">GitHub</span>
-                <span className="text-slate-900 text-lg font-semibold">github.com/ThapaMausam</span>
+                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">GitHub</span>
+                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">github.com/ThapaMausam</span>
               </div>
-            </a>
+            </motion.a>
 
-            {/* LinkedIn - Using Custom SVG */}
-            <a href="https://www.linkedin.com/in/mausamtmagar/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 group">
-              <div className="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 transition-colors">
-                <LinkedinIcon className="w-5 h-5 text-blue-700" />
+            {/* LinkedIn */}
+            <motion.a
+              whileHover={{ x: 10 }}
+              href="https://www.linkedin.com/in/mausamtmagar/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+            >
+              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
+                <LinkedinIcon className="w-6 h-6 text-blue-700" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-500 text-sm font-medium">LinkedIn</span>
-                <span className="text-slate-900 text-lg font-semibold">linkedin.com/in/mausamtmagar</span>
+                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">LinkedIn</span>
+                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">linkedin.com/in/mausamtmagar</span>
               </div>
-            </a>
+            </motion.a>
           </div>
 
           {/* Send Email Button */}
-          <div className="mt-12 flex justify-center">
-            <button
+          <div className="mt-16 flex justify-center">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               onClick={handleEmailClick}
-              className="flex items-center gap-2 bg-[#d1417a] hover:bg-[#b83569] text-white px-8 py-4 rounded-full font-medium transition-all transform active:scale-95 shadow-lg shadow-pink-100"
+              className="flex items-center gap-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-700 hover:to-blue-600 text-white px-10 py-5 rounded-full font-bold text-lg transition-all shadow-xl shadow-blue-200/50"
             >
               <Mail className="w-5 h-5" />
-              Send me an email
-            </button>
+              Say Hello
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
