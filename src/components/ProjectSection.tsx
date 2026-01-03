@@ -38,7 +38,7 @@ return (
         {/* Refined Minimalist Header Section */}
         <div className="mb-12 md:mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-medium tracking-tight text-[#202124] mb-4">
-          Project Showcase
+          Projects
           </h2>
           <p className="max-w-2xl text-[#5f6368] text-base leading-relaxed mx-auto">
           A selection of projects I've built, showcasing my skills in full-stack development.

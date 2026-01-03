@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Folder, Sparkles, Mail } from "lucide-react";
+import { Home, Folder, Sparkles, Mail, User } from "lucide-react";
 
 const NavBar = () => {
     const [activeTab, setActiveTab] = useState("Home");
@@ -8,6 +8,7 @@ const NavBar = () => {
         { name: "Home", icon: <Home size={20} /> },
         { name: "Projects", icon: <Folder size={20} /> },
         { name: "Skills", icon: <Sparkles size={20} /> },
+        { name: "About Me", icon: <User size={20} /> },
         { name: "Contact", icon: <Mail size={20} /> },
     ];
 
