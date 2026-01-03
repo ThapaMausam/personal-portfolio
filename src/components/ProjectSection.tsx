@@ -35,7 +35,7 @@ const ProjectSection = () => {
   ];
 
   return (
-    <section className="bg-slate-50 py-20 px-4 md:px-6 relative overflow-hidden">
+    <section className="bg-slate-900 py-20 px-4 md:px-6 relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Refined Minimalist Header Section */}
@@ -46,10 +46,10 @@ const ProjectSection = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 mb-6">
             Featured Projects
           </h2>
-          <p className="max-w-2xl text-slate-600 text-lg leading-relaxed mx-auto">
+          <p className="max-w-2xl text-slate-400 text-lg leading-relaxed mx-auto">
             A selection of projects I've built, showcasing my skills in full-stack development.
           </p>
         </motion.div>
@@ -62,10 +62,10 @@ const ProjectSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
+              className="group bg-slate-800/50 backdrop-blur-sm rounded-2xl overflow-hidden hover:shadow-2xl transition-all duration-300 border border-slate-700/50 flex flex-col h-full hover:border-blue-500/30 hover:-translate-y-2"
             >
               {/* Image Section */}
-              <div className="h-52 overflow-hidden bg-slate-100 relative">
+              <div className="h-52 overflow-hidden bg-slate-900 relative">
                 {project.image ? (
                   <>
                     <div className="absolute inset-0 bg-slate-900/10 group-hover:bg-transparent transition-colors z-10" />
@@ -76,9 +76,9 @@ const ProjectSection = () => {
                     />
                   </>
                 ) : (
-                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                  <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-800 to-slate-900">
                     <div className="px-6 text-center">
-                      <span className="text-xl font-bold text-slate-300 uppercase tracking-widest">
+                      <span className="text-xl font-bold text-slate-700 uppercase tracking-widest">
                         In Progress
                       </span>
                     </div>
@@ -88,28 +88,28 @@ const ProjectSection = () => {
 
               {/* Content Section */}
               <div className="p-6 flex flex-col grow">
-                <h3 className="text-xl font-bold text-slate-800 mb-2 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-xl font-bold text-slate-100 mb-2 group-hover:text-blue-400 transition-colors">
                   {project.title}
                 </h3>
 
-                <p className="text-slate-600 text-sm leading-relaxed mb-4 line-clamp-3">
+                <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-3">
                   {project.description}
                 </p>
 
                 {/* Tech Tags */}
                 <div className="flex flex-wrap gap-2 mb-6 mt-auto">
                   {project.tags.map(tag => (
-                    <span key={tag} className="text-[11px] px-2.5 py-1 bg-slate-50 text-slate-600 border border-slate-200 rounded-md font-medium">
+                    <span key={tag} className="text-[11px] px-2.5 py-1 bg-slate-900/50 text-slate-300 border border-slate-700 rounded-md font-medium group-hover:border-blue-500/30 transition-colors">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Actions */}
-                <div className="flex items-center gap-3 pt-4 border-t border-slate-100">
+                <div className="flex items-center gap-3 pt-4 border-t border-slate-700/50">
                   <a target='_blank'
                     href={project.github}
-                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-50 text-slate-700 text-sm font-medium hover:bg-slate-100 transition-all flex-1 justify-center"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-900 text-slate-300 text-sm font-medium hover:bg-slate-700/50 transition-all flex-1 justify-center border border-slate-700 hover:border-slate-600"
                   >
                     <Code size={16} />
                     <span>GitHub</span>

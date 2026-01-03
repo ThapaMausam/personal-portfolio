@@ -29,7 +29,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="bg-slate-50 py-20 px-6 font-sans">
+    <section className="bg-slate-900 py-20 px-6 font-sans">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -39,10 +39,10 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight">
             Contact <span className="text-blue-600">Me</span>
           </h2>
-          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
             Have a project in mind or just want to say hello? I'd love to hear from you.
           </p>
         </motion.div>
@@ -53,21 +53,21 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="bg-white border border-slate-100 rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-slate-200/50 max-w-3xl mx-auto"
+          className="bg-slate-800 border border-slate-700 rounded-[3rem] p-10 md:p-16 shadow-2xl shadow-black/20 max-w-3xl mx-auto"
         >
           <div className="flex flex-col gap-10">
             {/* Email */}
             <motion.a
               whileHover={{ x: 10 }}
               href="mailto:mausamwork@gmail.com"
-              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-700/50 transition-colors"
             >
-              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
-                <Mail className="w-6 h-6 text-blue-600" />
+              <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-slate-700 group-hover:scale-110 transition-all duration-300">
+                <Mail className="w-6 h-6 text-blue-500" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">Email</span>
-                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">mausamwork@gmail.com</span>
+                <span className="text-slate-500 text-sm font-medium uppercase tracking-wider mb-1">Email</span>
+                <span className="text-slate-200 text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">mausamwork@gmail.com</span>
               </div>
             </motion.a>
 
@@ -77,14 +77,14 @@ const ContactSection = () => {
               href="https://github.com/ThapaMausam"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-700/50 transition-colors"
             >
-              <div className="w-14 h-14 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-slate-200 group-hover:scale-110 transition-all duration-300">
-                <GithubIcon className="w-6 h-6 text-slate-700" />
+              <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-slate-700 group-hover:scale-110 transition-all duration-300">
+                <GithubIcon className="w-6 h-6 text-slate-400 group-hover:text-white" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">GitHub</span>
-                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">github.com/ThapaMausam</span>
+                <span className="text-slate-500 text-sm font-medium uppercase tracking-wider mb-1">GitHub</span>
+                <span className="text-slate-200 text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">github.com/ThapaMausam</span>
               </div>
             </motion.a>
 
@@ -94,14 +94,14 @@ const ContactSection = () => {
               href="https://www.linkedin.com/in/mausamtmagar/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-50 transition-colors"
+              className="flex items-center gap-6 group p-4 -m-4 rounded-2xl hover:bg-slate-700/50 transition-colors"
             >
-              <div className="w-14 h-14 rounded-full bg-blue-50 flex items-center justify-center group-hover:bg-blue-100 group-hover:scale-110 transition-all duration-300">
-                <LinkedinIcon className="w-6 h-6 text-blue-700" />
+              <div className="w-14 h-14 rounded-full bg-slate-900 flex items-center justify-center group-hover:bg-slate-700 group-hover:scale-110 transition-all duration-300">
+                <LinkedinIcon className="w-6 h-6 text-blue-500" />
               </div>
               <div className="flex flex-col">
-                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-1">LinkedIn</span>
-                <span className="text-slate-900 text-lg md:text-xl font-bold group-hover:text-blue-600 transition-colors">linkedin.com/in/mausamtmagar</span>
+                <span className="text-slate-500 text-sm font-medium uppercase tracking-wider mb-1">LinkedIn</span>
+                <span className="text-slate-200 text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">linkedin.com/in/mausamtmagar</span>
               </div>
             </motion.a>
           </div>
