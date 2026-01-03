@@ -40,7 +40,7 @@ const ContactSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
-            Get In <span className="text-blue-600">Touch</span>
+            Contact <span className="text-blue-600">Me</span>
           </h2>
           <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
             Have a project in mind or just want to say hello? I'd love to hear from you.

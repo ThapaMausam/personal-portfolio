@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import ProfileImage from "../assets/cropped_circle_image.png";
 
 const Hero = () => {
   return (
@@ -82,7 +83,7 @@ const Hero = () => {
           <div className="relative z-10 p-4 bg-white/5 backdrop-blur-2xl rounded-full border border-white/10 shadow-2xl skew-y-0 hover:skew-y-1 transition-transform duration-500">
             <div className="w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden bg-gradient-to-br from-blue-500 to-purple-600 p-1">
               <img
-                src="src/assets/cropped_circle_image.png"
+                src={ProfileImage}
                 alt="Mausam Thapa"
                 className="w-full h-full object-cover rounded-full filter hover:brightness-110 transition-all duration-300"
               />

@@ -1,5 +1,7 @@
 import { ExternalLink, Code } from 'lucide-react';
 import { motion } from 'framer-motion';
+import HomePageImg from '../assets/home-page.png';
+import SystemScreenshotImg from '../assets/system-screenshot.png';
 
 const ProjectSection = () => {
   const projects = [
@@ -8,7 +10,7 @@ const ProjectSection = () => {
       title: "Blog App",
       description: "A modern blog application that enables users to create, edit, view, and delete blog posts through a clean and intuitive interface.",
       tags: ["React", "Node.js", "MongoDB", "Express"],
-      image: "src/assets/home-page.png",
+      image: HomePageImg,
       link: "https://blog-project-six-ochre.vercel.app",
       github: "https://github.com/ThapaMausam/fullstack-blog-app"
     },
@@ -17,7 +19,7 @@ const ProjectSection = () => {
       title: "Realtime Todo WebSocket App",
       description: "A collaborative, real-time task management application. By utilizing WebSockets, this app ensures that any change—adding, deleting, or completing a task—is instantly synchronized across all connected users without a page refresh.",
       tags: ["React", "Socket.io", "Node.js", "MongoDB", "Typescript"],
-      image: "src/assets/system-screenshot.png",
+      image: SystemScreenshotImg,
       link: "https://github.com/ThapaMausam/realtime-todo-websocket",
       github: "https://github.com/ThapaMausam/realtime-todo-websocket"
     },
