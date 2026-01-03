@@ -101,7 +101,7 @@ const ContactSection = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-slate-500 text-sm font-medium uppercase tracking-wider mb-1">LinkedIn</span>
-                <span className="text-slate-200 text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">linkedin.com/in/mausamtmagar</span>
+                <span className="text-slate-200 text-lg md:text-xl font-bold group-hover:text-blue-400 transition-colors">in/mausamtmagar</span>
               </div>
             </motion.a>
           </div>
