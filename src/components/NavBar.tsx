@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, Folder, Sparkles, Mail, Moon } from "lucide-react";
+import { Home, Folder, Sparkles, Mail } from "lucide-react";
 
 const NavBar = () => {
     const [activeTab, setActiveTab] = useState("Home");
@@ -17,7 +17,7 @@ const NavBar = () => {
             /* Mobile: bottom */ 
             bottom-8 
             /* Tablet/Desktop: top */ 
-            md:top-4 md:bottom-auto">
+            md:top-8 md:bottom-auto">
 
             {/* 1. Main Pill Container */}
             <div className="flex items-center gap-1 bg-gray-100/80 p-2 px-4 rounded-full border border-gray-200 backdrop-blur-md shadow-lg">
@@ -57,10 +57,10 @@ const NavBar = () => {
                 ))}
             </div>
 
-            {/* 2. Dark Mode Toggle */}
+            {/* 2. Dark Mode Toggle
             <button className="p-3 rounded-full bg-gray-100/80 border border-gray-200 shadow-lg hover:bg-gray-200 transition-colors">
                 <Moon size={20} />
-            </button>
+            </button> */}
 
         </div>
     );
